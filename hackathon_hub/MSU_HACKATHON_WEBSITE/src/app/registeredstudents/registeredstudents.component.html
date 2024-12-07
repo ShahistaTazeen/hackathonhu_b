@@ -1,0 +1,25 @@
+<div>
+    <h2>Find Registered Students</h2>
+    <input type="text" [(ngModel)]="eventId" placeholder="Enter Event ID" />
+    <button (click)="fetchRegisteredStudents()">Get Students</button>
+  </div>
+  
+  <table *ngIf="students.length > 0" class="table table-bordered mt-3">
+    <thead>
+      <tr>
+        <th>Full Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td>{{ student.fullname }}</td>
+        <td>{{ student.Mid }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <div *ngIf="students.length === 0 && submitted">
+    <p>No students registered for this event ID.</p>
+  </div>
+  

@@ -1,0 +1,34 @@
+<body>
+
+  <div class="box" [ngStyle]="{'background-color': 'white', 'padding': '40px', 'border-radius': '10px', 'box-shadow': '0 4px 8px rgba(0, 0, 0, 0.1)', 'text-align': 'center', 'width': '300px'}">
+    
+    <img src="logo.png.png" alt="Logo" class="logo" [ngStyle]="{'max-width': '200px', 'margin-bottom': '30px'}">
+    
+    <h1 [ngStyle]="{'margin-bottom': '20px', 'font-size': '15px'}">Choose Your Role</h1>
+    
+    <form >
+      
+      <select id="role" [(ngModel)]="role" name="role" [ngStyle]="{'margin-bottom': '20px', 'padding': '10px', 'font-size': '16px', 'width': '100%'}">
+        <option value="organizer">Organizer</option>
+        <option value="student">Student</option>
+      </select>
+      
+      <!-- Display selected role for debugging -->
+      
+      <button type="submit"
+        [ngStyle]="{
+          'padding': '15px 30px', 
+          'margin': '10px', 
+          'font-size': '18px', 
+          'cursor': 'pointer',
+          'border': 'none', 
+          'border-radius': '5px', 
+          'background-color': role === 'organizer' ? '#007bff' : '#28a745',
+          'color': 'white',
+          'transition': 'background-color 0.3s ease'
+        }"(click)="goToRolePage()" >
+        Submit
+      </button>
+    </form>
+  </div>
+</body>

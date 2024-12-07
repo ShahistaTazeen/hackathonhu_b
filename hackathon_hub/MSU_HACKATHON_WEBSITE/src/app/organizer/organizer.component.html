@@ -1,0 +1,59 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/registeredstudents" routerLinkActive="active">View Registered Students</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/post-winners" routerLinkActive="active">Post Winners</a>
+          </li>
+        </ul>
+      </div>
+    
+  </nav>
+  <div class="container">
+    <h2>Create a New Event</h2>
+    <form >
+      <div class="form-group">
+        <label for="organizerName">Organizer Name</label>
+        <input type="text" id="organizerName" class="form-control" [(ngModel)]="organizerName" name="organizerName" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="eventName">Event Name</label>
+        <input type="text" id="eventName" class="form-control" [(ngModel)]="eventName" name="eventName" required>
+      </div>
+      <div class="form-group">
+        <label for="eventName">Event Id</label>
+        <input type="text" id="eventID" class="form-control" [(ngModel)]="eventID" name="eventID" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" class="form-control" [(ngModel)]="description" name="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="prizemoney">Prize Monney</label>
+        <input id="PrizeMoney" class="form-control" [(ngModel)]="prizeMoney" name="PrizeMoney" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" class="form-control" [(ngModel)]="location" name="location" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="date">Registration End Date</label>
+        <input type="date" id="date" class="form-control" [(ngModel)]="date" name="date" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" id="time" class="form-control" [(ngModel)]="time" name="time" required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary" (click)="postEvent()">Post Event</button>
+    </form>
+  </div>
+  
+  

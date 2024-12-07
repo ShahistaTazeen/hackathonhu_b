@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <h2>Register for Event</h2>
+    <form (ngSubmit)="onSubmit()" #registrationForm="ngForm">
+      <!-- Student Name -->
+      <div class="mb-3">
+        <label for="studentName" class="form-label">Student Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="studentName"
+          required
+          [(ngModel)]="studentName"
+          name="studentName"
+          #name="ngModel"
+          placeholder="Enter your full name"
+        />
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+          Student Name is required.
+        </div>
+      </div>
+  
+      <!-- Student Email -->
+      <div class="mb-3">
+        <label for="studentEmail" class="form-label">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="studentEmail"
+          required
+          [(ngModel)]="studentEmail"
+          name="studentEmail"
+          #email="ngModel"
+          placeholder="Enter your email"
+        />
+        <div *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger">
+          <div *ngIf="email.errors?.['required']">Email is required.</div>
+          <div *ngIf="email.errors?.['email']">Please enter a valid email address.</div>
+        </div>
+      </div>
+  
+     
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary" [disabled]="registrationForm.invalid">
+        Register
+      </button>
+    </form>
+  </div>
+  
